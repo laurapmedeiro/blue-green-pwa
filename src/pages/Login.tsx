@@ -25,7 +25,7 @@ const Login: React.FC = () => {
       axios.post(`http://localhost:8080/api/auth/signin`, {
       username,
       password
-      }).then((response) => {
+      }).then((response: any) => {
         console.log(response);
         if (response.data != null ){
           sessionStorage.setItem("username", username);
@@ -34,7 +34,7 @@ const Login: React.FC = () => {
         } else {
           alert("Error while doing login. Please retry later")
         }
-      }).catch((error) => {
+      }).catch((error: any) => {
         alert("Cannot login. Username or password incorrect")
       })
     }  
